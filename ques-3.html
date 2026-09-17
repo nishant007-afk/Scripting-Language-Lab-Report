@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN3 - Count Vowels</title>
+</head>
+<body>
+  <h3>Count Vowels in a String</h3>
+  <label for="stringInput">Enter a string: </label><br>
+  <input type="text" id="stringInput">
+  <button onclick="countAndDisplay()">Count Vowels</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function countAndDisplay() {
+      var input = document.getElementById("stringInput").value;
+      var vowels = "aeiou";
+      var count = 0;
+      var lowerStr = input.toLowerCase();
+      
+      for (var i = 0; i < lowerStr.length; i++) {
+        if (vowels.indexOf(lowerStr[i]) !== -1) {
+          count++;
+        }
+      }
+      
+      document.getElementById("result").innerText = "Number of Vowels: " + count;
+    }
+  </script>
+</body>
+</html>

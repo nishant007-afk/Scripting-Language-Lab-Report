@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN2 - Alphabetical Order</title>
+</head>
+<body>
+  <h3>Alphabetize String</h3>
+  <label for="stringInput">Enter a string: </label><br>
+  <input type="text" id="stringInput">
+  <button onclick="sortAndDisplay()">Sort</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function sortAndDisplay() {
+      var input = document.getElementById("stringInput").value;
+      var sortedStr = input.split("").sort().join("");
+      
+      document.getElementById("result").innerText = "Sorted String: '" + sortedStr + "'";
+    }
+  </script>
+</body>
+</html>

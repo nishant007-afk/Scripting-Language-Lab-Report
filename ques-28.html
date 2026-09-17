@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="wrapper">
+    <h1 id="mainTitle">Asabeneh Yetayeh challenges in <span id="year">2020</span></h1>
+    <h2>30DaysOfJavaScript Challenge</h2>
+    <div id="dateTime" style="padding: 10px; display: inline-block; font-weight: bold;"></div>
+    <ul id="challengeList">
+      <li>Python Challenge Done</li>
+      <li>JavaScript Challenge Ongoing</li>
+      <li>React Challenge Coming</li>
+      <li>FullStack Challenge Coming</li>
+      <li>DataAnalysis Challenge Coming</li>
+      <li>ReactNative Challenge Coming</li>
+      <li>MachineLearning Challenge Coming</li>
+    </ul>
+  </div>
+
+  <script>
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    setInterval(function() {
+      document.getElementById('year').style.color = getRandomColor();
+      document.getElementById('dateTime').style.backgroundColor = getRandomColor();
+      
+      var now = new Date();
+      document.getElementById('dateTime').innerText = now.toDateString() + " " + now.toLocaleTimeString();
+    }, 1000);
+
+    var items = document.querySelectorAll('#challengeList li');
+    for (var i = 0; i < items.length; i++) {
+      var text = items[i].textContent.toLowerCase();
+      if (text.includes('done')) {
+        items[i].style.backgroundColor = 'green';
+      } else if (text.includes('ongoing')) {
+        items[i].style.backgroundColor = 'yellow';
+      } else if (text.includes('coming')) {
+        items[i].style.backgroundColor = 'red';
+      }
+    }
+  </script>
+</body>
+</html>

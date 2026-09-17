@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN14 - Sort Array</title>
+</head>
+<body>
+  <h3>Sort Array Items</h3>
+  <button onclick="displaySorted()">Sort Array</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function sortArray(arr) {
+      return arr.sort((a, b) => a - b);
+    }
+
+    function displaySorted() {
+      var arr1 = [3, 8, 7, 6, 5, -4, 3, 2, 1];
+      var sortedArr = sortArray(arr1);
+      
+      document.getElementById("result").innerText = "Sample Output: " + sortedArr.join(",");
+    }
+  </script>
+</body>
+</html>

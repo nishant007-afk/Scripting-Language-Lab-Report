@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN9 - Larger and Smaller of Three Numbers</title>
+</head>
+<body>
+  <h3>Find Larger and Smaller (Three Numbers)</h3>
+  <label for="num1">Enter first number: </label><br>
+  <input type="text" id="num1"><br><br>
+  
+  <label for="num2">Enter second number: </label><br>
+  <input type="text" id="num2"><br><br>
+
+  <label for="num3">Enter third number: </label><br>
+  <input type="text" id="num3"><br><br>
+  
+  <button onclick="compareThreeNumbers()">Compare</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function compareThreeNumbers() {
+      var num1 = Number(document.getElementById("num1").value);
+      var num2 = Number(document.getElementById("num2").value);
+      var num3 = Number(document.getElementById("num3").value);
+      
+      var larger = Math.max(num1, num2, num3);
+      var smaller = Math.min(num1, num2, num3);
+      
+      var output = "Larger: " + larger + "<br>Smaller: " + smaller;
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

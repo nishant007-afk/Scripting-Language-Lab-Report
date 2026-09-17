@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN11 - Smaller Number</title>
+</head>
+<body>
+  <h3>Find Smaller Number</h3>
+  <label for="numbersInput">Enter numbers (comma-separated): </label><br>
+  <input type="text" id="numbersInput"><br><br>
+  <button onclick="getSmaller()">Find Smaller</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function findSmaller(arr) {
+      return Math.min(...arr);
+    }
+
+    function getSmaller() {
+      var input = document.getElementById("numbersInput").value;
+      var arr = input.split(",");
+      
+      for (var i = 0; i < arr.length; i++) {
+        arr[i] = Number(arr[i]);
+      }
+      
+      var minVal = findSmaller(arr);
+      document.getElementById("result").innerText = "Smaller: " + minVal;
+    }
+  </script>
+</body>
+</html>

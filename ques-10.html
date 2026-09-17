@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN10 - Larger Number</title>
+</head>
+<body>
+  <h3>Find Larger Number</h3>
+  <label for="numbersInput">Enter numbers (comma-separated): </label><br>
+  <input type="text" id="numbersInput"><br><br>
+  <button onclick="getLarger()">Find Larger</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function getLarger() {
+      var input = document.getElementById("numbersInput").value;
+      var arr = input.split(",");
+      
+      for (var i = 0; i < arr.length; i++) {
+        arr[i] = Number(arr[i]);
+      }
+      
+      var maxVal = Math.max(...arr);
+      document.getElementById("result").innerText = "Larger: " + maxVal;
+    }
+  </script>
+</body>
+</html>

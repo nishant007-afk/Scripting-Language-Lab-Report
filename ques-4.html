@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN4 - Capitalize First Letter</title>
+</head>
+<body>
+  <h3>Capitalize First Letter of Each Word</h3>
+  <label for="stringInput">Enter a string: </label><br>
+  <input type="text" id="stringInput">
+  <button onclick="convertAndDisplay()">Capitalize</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function convertAndDisplay() {
+      var input = document.getElementById("stringInput").value;
+      var words = input.split(" ");
+      
+      for (var i = 0; i < words.length; i++) {
+        if (words[i].length > 0) {
+          words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+      }
+      
+      var resultStr = words.join(" ");
+      document.getElementById("result").innerText = "Result: " + resultStr;
+    }
+  </script>
+</body>
+</html>

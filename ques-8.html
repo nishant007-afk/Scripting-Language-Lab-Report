@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN8 - Larger and Smaller of Two Numbers</title>
+</head>
+<body>
+  <h3>Find Larger and Smaller</h3>
+  <label for="num1">Enter first number: </label><br>
+  <input type="text" id="num1"><br><br>
+  
+  <label for="num2">Enter second number: </label><br>
+  <input type="text" id="num2"><br><br>
+  
+  <button onclick="compareNumbers()">Compare</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function compareNumbers() {
+      var num1 = Number(document.getElementById("num1").value);
+      var num2 = Number(document.getElementById("num2").value);
+      
+      var larger, smaller;
+      
+      if (num1 > num2) {
+        larger = num1;
+        smaller = num2;
+      } else if (num2 > num1) {
+        larger = num2;
+        smaller = num1;
+      } else {
+        var equalMsg = "Both numbers are equal.";
+        document.getElementById("result").innerText = equalMsg;
+        return;
+      }
+      
+      var output = "Larger: " + larger + "<br>Smaller: " + smaller;
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

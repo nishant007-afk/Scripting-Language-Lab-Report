@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Find Upcoming Weekend Date</h3>
+  <input type="date" id="dateInput">
+  <button onclick="getWeekend()">Get Weekend</button>
+  <div id="result"></div>
+
+  <script>
+    function getWeekend() {
+      var d = new Date(document.getElementById("dateInput").value);
+      var day = d.getDay();
+      var diff = (6 - day + 7) % 7 || 7;
+      d.setDate(d.getDate() + diff);
+      document.getElementById("result").innerText = "Next Saturday: " + d.toDateString();
+    }
+  </script>
+</body>
+</html>

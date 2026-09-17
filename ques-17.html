@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Find Largest of Five Numbers</h3>
+  <div id="result">Check the alert box for the result.</div>
+
+  <script>
+    function findLargest() {
+      var n1 = Number(prompt("Enter 1st number:"));
+      var n2 = Number(prompt("Enter 2nd number:"));
+      var n3 = Number(prompt("Enter 3rd number:"));
+      var n4 = Number(prompt("Enter 4th number:"));
+      var n5 = Number(prompt("Enter 5th number:"));
+      
+      var maxVal = Math.max(n1, n2, n3, n4, n5);
+      alert("The largest number is: " + maxVal);
+      document.getElementById("result").innerText = "The largest number is: " + maxVal;
+    }
+
+    window.onload = findLargest;
+  </script>
+</body>
+</html>

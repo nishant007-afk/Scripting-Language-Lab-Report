@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Remove Characters from String</h3>
+  <input type="text" id="strInput" placeholder="Enter string"><br><br>
+  <input type="number" id="numInput" placeholder="Chars to remove"><br><br>
+  <button onclick="removeChars()">Remove</button>
+  <div id="result"></div>
+
+  <script>
+    function removeChars() {
+      var str = document.getElementById("strInput").value;
+      var num = Number(document.getElementById("numInput").value);
+      document.getElementById("result").innerText = "Result: " + str.slice(num);
+    }
+  </script>
+</body>
+</html>

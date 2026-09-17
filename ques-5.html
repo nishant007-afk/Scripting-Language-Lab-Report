@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN5 - Current Date</title>
+</head>
+<body>
+  <h3>Get Current Date Formats</h3>
+  <button onclick="displayDates()">Show Current Dates</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function displayDates() {
+      var today = new Date();
+      
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0');
+      var yyyy = today.getFullYear();
+      
+      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      
+      var monthName = months[today.getMonth()];
+      var dayName = days[today.getDay()];
+      
+      var format1 = mm + '-' + dd + '-' + yyyy;
+      var format2 = mm + '/' + dd + '/' + yyyy;
+      var format3 = dd + '-' + mm + '-' + yyyy;
+      var format4 = dd + '/' + mm + '/' + yyyy;
+      var format5 = yyyy + ' ' + monthName + ' ' + dd + ' ' + dayName;
+      
+      var output = format1 + "<br>" + format2 + "<br>" + format3 + "<br>" + format4 + "<br>" + format5;
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

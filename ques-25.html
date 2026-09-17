@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Person Account Management</h3>
+  <button onclick="testAccount()">Test Account</button>
+  <div id="result"></div>
+
+  <script>
+    var personAccount = {
+      firstName: "Nishant",
+      lastName: "Dahal",
+      incomes: [{amount: 50000, description: "Salary"}, {amount: 10000, description: "Freelance"}],
+      expenses: [{amount: 15000, description: "Rent"}, {amount: 5000, description: "Food"}],
+      
+      totalIncome: function() {
+        var total = 0;
+        for(var i = 0; i < this.incomes.length; i++) {
+          total += this.incomes[i].amount;
+        }
+        return total;
+      },
+      
+      totalExpense: function() {
+        var total = 0;
+        for(var i = 0; i < this.expenses.length; i++) {
+          total += this.expenses[i].amount;
+        }
+        return total;
+      },
+      
+      accountInfo: function() {
+        return this.firstName + " " + this.lastName + " has a total income of " + this.totalIncome() + " and total expenses of " + this.totalExpense() + ".";
+      },
+      
+      addIncome: function(amount, description) {
+        this.incomes.push({amount: amount, description: description});
+      },
+      
+      addExpense: function(amount, description) {
+        this.expenses.push({amount: amount, description: description});
+      },
+      
+      accountBalance: function() {
+        return this.totalIncome() - this.totalExpense();
+      }
+    };
+
+    function testAccount() {
+      personAccount.addIncome(5000, "Bonus");
+      personAccount.addExpense(2000, "Utilities");
+      
+      var output = personAccount.accountInfo() + "<br>" +
+                   "Account Balance: " + personAccount.accountBalance();
+                   
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

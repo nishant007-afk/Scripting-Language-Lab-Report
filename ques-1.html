@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN1 - Reverse Number</title>
+</head>
+<body>
+  <h3>Reverse a Number</h3>
+  <label for="numberInput">Enter a number: </label><br>
+  <input type="text" id="numberInput">
+  <button onclick="reverseAndDisplay()">Reverse</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function reverseAndDisplay() {
+      var input = document.getElementById("numberInput").value;
+      var numStr = input.toString();
+      var reversedStr = numStr.split("").reverse().join("");
+      var resultNum = Number(reversedStr);
+      
+      document.getElementById("result").innerText = "Reversed Number: " + resultNum;
+    }
+  </script>
+</body>
+</html>

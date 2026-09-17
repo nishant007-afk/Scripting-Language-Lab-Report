@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Date Difference in Days</h3>
+  <input type="date" id="date1"><br><br>
+  <input type="date" id="date2"><br><br>
+  <button onclick="calculateDiff()">Calculate Difference</button>
+  <div id="result"></div>
+
+  <script>
+    function calculateDiff() {
+      var d1 = new Date(document.getElementById("date1").value);
+      var d2 = new Date(document.getElementById("date2").value);
+      var diff = Math.round(Math.abs(d1 - d2) / (1000 * 60 * 60 * 24));
+      document.getElementById("result").innerText = "Difference in days: " + diff;
+    }
+  </script>
+</body>
+</html>

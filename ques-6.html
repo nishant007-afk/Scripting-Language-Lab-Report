@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN6 - Days Until Christmas</title>
+</head>
+<body>
+  <h3>Calculate Days Until Christmas</h3>
+  <button onclick="calculateChristmas()">Calculate</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function calculateChristmas() {
+      var today = new Date();
+      var cmas = new Date(today.getFullYear(), 11, 25);
+      
+      if (today.getMonth() == 11 && today.getDate() > 25) {
+        cmas.setFullYear(cmas.getFullYear() + 1);
+      }
+      
+      var oneDay = 1000 * 60 * 60 * 24;
+      var daysLeft = Math.ceil((cmas.getTime() - today.getTime()) / oneDay);
+      
+      document.getElementById("result").innerText = "Days left until Christmas: " + daysLeft;
+    }
+  </script>
+</body>
+</html>

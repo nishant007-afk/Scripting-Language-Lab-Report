@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN7 - Arithmetic Operations</title>
+</head>
+<body>
+  <h3>Calculator</h3>
+  <label for="num1">Enter first number: </label><br>
+  <input type="text" id="num1"><br><br>
+  
+  <label for="num2">Enter second number: </label><br>
+  <input type="text" id="num2"><br><br>
+  
+  <button onclick="calculate()">Calculate</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      var num1 = Number(document.getElementById("num1").value);
+      var num2 = Number(document.getElementById("num2").value);
+      
+      var add = num1 + num2;
+      var sub = num1 - num2;
+      var mul = num1 * num2;
+      var div = (num2 !== 0) ? (num1 / num2) : "Cannot divide by zero";
+      
+      var output = "Addition: " + add + "<br>" +
+                   "Subtraction: " + sub + "<br>" +
+                   "Multiplication: " + mul + "<br>" +
+                   "Division: " + div;
+                   
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

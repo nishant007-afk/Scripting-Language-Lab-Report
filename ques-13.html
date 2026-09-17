@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QN13 - Join Array Elements with User Input</title>
+</head>
+<body>
+  <h3>Join Array into a String</h3>
+  
+  <label for="arrayInput">Enter array elements (comma-separated): </label><br>
+  <input type="text" id="arrayInput" placeholder="Red, Green, White, Black"><br><br>
+  
+  <label for="separatorInput">Enter separator: </label><br>
+  <input type="text" id="separatorInput" placeholder="+, ,, or space"><br><br>
+  
+  <button onclick="displayJoinedString()">Join Elements</button><br><br>
+  <div id="result"></div>
+
+  <script>
+    function joinArray(arr, separator) {
+      return arr.join(separator);
+    }
+
+    function displayJoinedString() {
+      var rawInput = document.getElementById("arrayInput").value;
+      var separator = document.getElementById("separatorInput").value;
+      
+      // Split the user's text input into an array
+      var myColor = rawInput.split(",");
+      
+      // Trim extra spaces from each element for clean output
+      for (var i = 0; i < myColor.length; i++) {
+        myColor[i] = myColor[i].trim();
+      }
+      
+      var resultStr = joinArray(myColor, separator);
+      
+      document.getElementById("result").innerText = "Result: " + resultStr;
+    }
+  </script>
+</body>
+</html>

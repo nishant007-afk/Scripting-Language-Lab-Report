@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Dog Object Operations</h3>
+  <button onclick="runDogTasks()">Run Code</button>
+  <div id="result"></div>
+
+  <script>
+    function runDogTasks() {
+      var dog = {};
+      
+      console.log("Empty dog object:", dog);
+      
+      dog.name = "Tommy";
+      dog.legs = 4;
+      dog.color = "Brown";
+      dog.age = 3;
+      dog.bark = function() {
+        return "woof woof";
+      };
+      
+      var info = "Name: " + dog.name + "<br>" +
+                 "Legs: " + dog.legs + "<br>" +
+                 "Color: " + dog.color + "<br>" +
+                 "Age: " + dog.age + "<br>" +
+                 "Bark: " + dog.bark() + "<br>";
+                 
+      dog.breed = "German Shepherd";
+      dog.getDogInfo = function() {
+        return this.name + " is a " + this.breed + " of color " + this.color + ".";
+      };
+      
+      info += "New Property (Breed): " + dog.breed + "<br>" +
+              "New Method (getDogInfo): " + dog.getDogInfo();
+              
+      document.getElementById("result").innerHTML = info;
+    }
+  </script>
+</body>
+</html>
